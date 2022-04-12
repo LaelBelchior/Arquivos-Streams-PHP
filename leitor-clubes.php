@@ -1,13 +1,5 @@
 <?php
 
-$arquivo = fopen('lista-clubes.txt', 'r');
-
-$tamanhoArquivo =  filesize('lista-clubes.txt');
-
-echo $tamanhoArquivo . PHP_EOL;
-
-$clubes = fread($arquivo, $tamanhoArquivo);
+$clubes = file_get_contents('lista-clubes.txt');
 
 echo $clubes;
-
-fclose($arquivo);
