@@ -2,10 +2,12 @@
 
 $arquivo = fopen('lista-clubes.txt', 'r');
 
-while (!feof($arquivo)) {
-    $curso = fgets($arquivo);
+$tamanhoArquivo =  filesize('lista-clubes.txt');
 
-    echo $curso . PHP_EOL;
-}
+echo $tamanhoArquivo . PHP_EOL;
+
+$clubes = fread($arquivo, $tamanhoArquivo);
+
+echo $clubes;
 
 fclose($arquivo);
