@@ -5,7 +5,7 @@ $arquivosClubes = new SplFileObject('clubes.csv');
 while(!$arquivosClubes -> eof()){
     $linha = $arquivosClubes -> fgetcsv(';');
 
-    echo $linha[0] . PHP_EOL;
+    echo utf8_encode($linha[0]) . PHP_EOL;
 }
 
 $date = new DateTime();
